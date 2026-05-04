@@ -41,31 +41,21 @@ Invalid accesses return `SLVERR = 2'b10`.
 
 ## Project Structure
 
-```text
-Axi4_lite_UVM_vip/
-├── assertions/
-│   └── axi4_lite_assertions.sv
-├── docs/
-│   └── waveform.png
-├── rtl/
-│   └── axi4_lite_slave.sv
-├── scripts/
-│   └── run_regression.sh
-├── sim/
-│   └── filelist.f
-├── tb/
-│   ├── axi4_lite_if.sv
-│   ├── axi4_lite_pkg.sv
-│   ├── tb_top.sv
-│   └── uvm_tb_top.sv
-├── .gitignore
-└── README.md
+- `assertions/axi4_lite_assertions.sv` — SystemVerilog protocol assertions
+- `docs/waveform.png` — waveform screenshot
+- `rtl/axi4_lite_slave.sv` — AXI4-Lite slave RTL
+- `scripts/run_regression.sh` — regression script
+- `sim/filelist.f` — VCS compile filelist
+- `tb/axi4_lite_if.sv` — AXI4-Lite interface
+- `tb/axi4_lite_pkg.sv` — UVM package with testbench components
+- `tb/tb_top.sv` — simple non-UVM testbench
+- `tb/uvm_tb_top.sv` — UVM top-level testbench
+- `.gitignore` — ignored simulation/generated files
+- `README.md` — project documentation
 
 ---
 
 ## Verification Architecture
-
-The UVM environment includes:
 
 | Component | Description |
 |----------|-------------|
@@ -130,25 +120,23 @@ The waveform below shows a basic AXI4-Lite write followed by readback.
 
 Load Synopsys VCS:
 
-```bash
-module load synopsys
-module load vcs/T-2022.06-SP2-2
-```
+`module load synopsys`
+
+`module load vcs/T-2022.06-SP2-2`
 
 Run full regression:
 
-```bash
-cd scripts
-./run_regression.sh
-```
+`cd scripts`
+
+`./run_regression.sh`
 
 Expected result:
 
-```text
-Passed: 5
-Failed: 0
-ALL TESTS PASSED
-```
+`Passed: 5`
+
+`Failed: 0`
+
+`ALL TESTS PASSED`
 
 ---
 
@@ -156,15 +144,11 @@ ALL TESTS PASSED
 
 From the `sim` directory:
 
-```bash
-vcs -full64 -sverilog -ntb_opts uvm -timescale=1ns/1ps -f filelist.f -l compile_uvm.log
-```
+`vcs -full64 -sverilog -ntb_opts uvm -timescale=1ns/1ps -f filelist.f -l compile_uvm.log`
 
 Run a specific test:
 
-```bash
-./simv +UVM_TESTNAME=axi4_lite_random_test -l random_test.log
-```
+`./simv +UVM_TESTNAME=axi4_lite_random_test -l random_test.log`
 
 ---
 
@@ -172,18 +156,17 @@ Run a specific test:
 
 The full regression passed all tests:
 
-```text
-Passed: 5
-Failed: 0
-ALL TESTS PASSED
-```
+`Passed: 5`
+
+`Failed: 0`
+
+`ALL TESTS PASSED`
 
 No UVM errors or fatal errors were reported:
 
-```text
-UVM_ERROR : 0
-UVM_FATAL : 0
-```
+`UVM_ERROR : 0`
+
+`UVM_FATAL : 0`
 
 ---
 
