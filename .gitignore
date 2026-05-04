@@ -1,0 +1,29 @@
+# VCS generated simulation files
+sim/simv
+sim/simv.daidir/
+sim/csrc/
+sim/ucli.key
+sim/DVEfiles/
+
+# Simulation logs
+sim/*.log
+
+# Waveform files
+sim/*.vcd
+sim/*.vpd
+sim/*.fsdb
+
+# Coverage files
+sim/*.vdb
+sim/urgReport/
+
+# Temporary/editor files
+*.swp
+*.bak
+.DS_Store
+
+# Backup files
+*~
+
+# Extra VCS generated files
+sim/vc_hdrs.h
