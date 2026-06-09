@@ -193,9 +193,3 @@ This project demonstrates:
 - Adding protocol assertions
 - Running automated regressions
 - Debugging simulation using logs and waveforms
-
----
-
-## Resume Highlight
-
-Built an AXI4-Lite UVM Verification IP for a slave register block using SystemVerilog and UVM, including driver, monitor, scoreboard, functional coverage, constrained-random tests, protocol assertions, waveform debug, and automated regression using Synopsys VCS.
